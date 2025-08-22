@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.0 on win32)" generated="2025-08-22T09:17:13.252016" rpa="false" schemaversion="5">
+<suite id="s1" name="RF project" source="D:\RF_project">
+<suite id="s1-s1" name="Robot" source="D:\RF_project\robot">
+<suite id="s1-s1-s1" name="Test Cart" source="D:\RF_project\robot\test_cart.robot">
+<kw name="Open SauceDemo On Browser" owner="login" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-22T09:17:14.111585" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 1000.0, "timeout": 30000.0, "tracesDir": "D:\\RF_project\\results\\browser\\traces\\temp\\622868ea-c08a-40f9-a2ac-0bcdb3ff118f"}</msg>
+<msg time="2025-08-22T09:17:14.159294" level="INFO">Starting Browser process D:\RF_project\venv\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:58720</msg>
+<msg time="2025-08-22T09:17:17.503848" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":1000,"timeout":30000,"tracesDir":"D:\\RF_project\\results\\browser\\traces\\temp\\622868ea-c08a-40f9-a2ac-0bcdb3ff118f"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<arg>slowMo=1s</arg>
+<arg>timeout=30s</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-22T09:17:14.108880" elapsed="3.397654"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-08-22T09:17:17.511585" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "defaultBrowserType": "chromium",
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "tracing": true,
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2025-08-22T09:17:17.573860" level="INFO">Successfully created context and trace file will be saved to: D:\RF_project\results\browser\traces\trace_context=a7c1833a-3d10-4a67-b374-b3e21124193a.zip</msg>
+<msg time="2025-08-22T09:17:17.573860" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'defaultBrowserType': 'chromium', 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'tracing': True, 'viewport': {'width': 1280, 'height': 720}, 'trace': {'screenshots': True, 'snapshots': True}}</msg>
+<arg>tracing=True</arg>
+<arg>viewport={"width": 1280, "height": 720}</arg>
+<arg>defaultBrowserType=chromium</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-08-22T09:17:17.507464" elapsed="0.067780"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-22T09:17:21.682021" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com/</msg>
+<arg>${CONSTANTS_START_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-22T09:17:17.583834" elapsed="4.099094"/>
+</kw>
+<status status="PASS" start="2025-08-22T09:17:14.098877" elapsed="7.593502"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Modify Cart Based On Price" line="8">
+<kw name="Handle Cart Items By Price" owner="cart">
+<kw name="Log In" owner="login">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-22T09:17:21.741255" level="INFO">Fills the text 'standard_user' in the given field.</msg>
+<arg>${LOCATORS_AUTH_USERNAME}</arg>
+<arg>${CONSTANTS_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:21.722085" elapsed="1.144271"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-22T09:17:22.892275" level="INFO">Fills the text 'secret_sauce' in the given field.</msg>
+<arg>${LOCATORS_AUTH_PASSWORD}</arg>
+<arg>${CONSTANTS_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:22.876210" elapsed="1.088384"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-22T09:17:23.980654" level="INFO">Clicks the element 'input[data-test='login-button']'.</msg>
+<arg>${LOCATORS_AUTH_LOGIN_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:23.968572" elapsed="1.180806"/>
+</kw>
+<status status="PASS" start="2025-08-22T09:17:21.722085" elapsed="3.436307"/>
+</kw>
+<kw name="Add All Items To Cart" owner="add_items">
+<kw name="Get Elements" owner="Browser">
+<msg time="2025-08-22T09:17:25.230672" level="INFO">Found locator('.inventory_item button').first(),locator('.inventory_item button').nth(1),locator('.inventory_item button').nth(2),locator('.inventory_item button').nth(3),locator('.inventory_item button').nth(4),locator('.inventory_item button').nth(5) Locators successfully.</msg>
+<msg time="2025-08-22T09:17:25.232081" level="INFO">${buttons} = ['.inventory_item button &gt;&gt; nth=0', '.inventory_item button &gt;&gt; nth=1', '.inventory_item button &gt;&gt; nth=2', '.inventory_item button &gt;&gt; nth=3', '.inventory_item button &gt;&gt; nth=4', '.inventory_item button ...</msg>
+<var>${buttons}</var>
+<arg>${LOCATOR_ADD_TO_CART_BTN}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:25.174066" elapsed="0.059049"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-08-22T09:17:25.245623" level="INFO">Length is 6.</msg>
+<msg time="2025-08-22T09:17:25.246546" level="INFO">${count} = 6</msg>
+<var>${count}</var>
+<arg>${buttons}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-08-22T09:17:25.233115" elapsed="0.014335"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-22T09:17:25.264054" level="INFO">Clicks the element '.inventory_item button &gt;&gt; nth=0'.</msg>
+<arg>${buttons}[${index}]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:25.264054" elapsed="1.082512"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-22T09:17:26.381846" level="INFO">Waited for Element with selector .shopping_cart_badge at state visible</msg>
+<arg>${LOCATOR_CART_BADGE}</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-22T09:17:26.347335" elapsed="0.034511"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-22T09:17:26.482232" level="INFO">Text: '1'</msg>
+<msg time="2025-08-22T09:17:26.482923" level="INFO">${badge} = 1</msg>
+<var>${badge}</var>
+<arg>${LOCATOR_CART_BADGE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:26.381846" elapsed="0.101077"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-08-22T09:17:26.497463" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${badge}</arg>
+<arg>${index + 1}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-08-22T09:17:26.482923" elapsed="0.014540"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2025-08-22T09:17:25.261615" elapsed="1.235848"/>
+</iter>
+<iter>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-22T09:17:26.530777" level="INFO">Clicks the element '.inventory_item button &gt;&gt; nth=1'.</msg>
+<arg>${buttons}[${index}]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:26.513963" elapsed="1.078098"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-22T09:17:27.625056" level="INFO">Waited for Element with selector .shopping_cart_badge at state visible</msg>
+<arg>${LOCATOR_CART_BADGE}</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-22T09:17:27.597335" elapsed="0.027721"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-22T09:17:27.683434" level="INFO">Text: '2'</msg>
+<msg time="2025-08-22T09:17:27.683434" level="INFO">${badge} = 2</msg>
+<var>${badge}</var>
+<arg>${LOCATOR_CART_BADGE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:27.630676" elapsed="0.052758"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-08-22T09:17:27.702304" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${badge}</arg>
+<arg>${index + 1}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-08-22T09:17:27.694202" elapsed="0.008102"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2025-08-22T09:17:26.513963" elapsed="1.194846"/>
+</iter>
+<iter>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-22T09:17:27.729980" level="INFO">Clicks the element '.inventory_item button &gt;&gt; nth=2'.</msg>
+<arg>${buttons}[${index}]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:27.716397" elapsed="1.081428"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-22T09:17:28.840227" level="INFO">Waited for Element with selector .shopping_cart_badge at state visible</msg>
+<arg>${LOCATOR_CART_BADGE}</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-22T09:17:28.797825" elapsed="0.042402"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-22T09:17:28.913450" level="INFO">Text: '3'</msg>
+<msg time="2025-08-22T09:17:28.913450" level="INFO">${badge} = 3</msg>
+<var>${badge}</var>
+<arg>${LOCATOR_CART_BADGE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:28.847628" elapsed="0.065822"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-08-22T09:17:28.931135" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${badge}</arg>
+<arg>${index + 1}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-08-22T09:17:28.916930" elapsed="0.014205"/>
+</kw>
+<var name="${index}">2</var>
+<status status="PASS" start="2025-08-22T09:17:27.715853" elapsed="1.231903"/>
+</iter>
+<iter>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-22T09:17:28.980082" level="INFO">Clicks the element '.inventory_item button &gt;&gt; nth=3'.</msg>
+<arg>${buttons}[${index}]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:28.968317" elapsed="1.082502"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-22T09:17:30.092742" level="INFO">Waited for Element with selector .shopping_cart_badge at state visible</msg>
+<arg>${LOCATOR_CART_BADGE}</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-22T09:17:30.057887" elapsed="0.034855"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-22T09:17:30.162659" level="INFO">Text: '4'</msg>
+<msg time="2025-08-22T09:17:30.163412" level="INFO">${badge} = 4</msg>
+<var>${badge}</var>
+<arg>${LOCATOR_CART_BADGE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:30.098121" elapsed="0.066299"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-08-22T09:17:30.176303" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${badge}</arg>
+<arg>${index + 1}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-08-22T09:17:30.169797" elapsed="0.006506"/>
+</kw>
+<var name="${index}">3</var>
+<status status="PASS" start="2025-08-22T09:17:28.959218" elapsed="1.224613"/>
+</iter>
+<iter>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-22T09:17:30.208228" level="INFO">Clicks the element '.inventory_item button &gt;&gt; nth=4'.</msg>
+<arg>${buttons}[${index}]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:30.197722" elapsed="1.083799"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-22T09:17:31.315857" level="INFO">Waited for Element with selector .shopping_cart_badge at state visible</msg>
+<arg>${LOCATOR_CART_BADGE}</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-22T09:17:31.281521" elapsed="0.037974"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-22T09:17:31.383215" level="INFO">Text: '5'</msg>
+<msg time="2025-08-22T09:17:31.383215" level="INFO">${badge} = 5</msg>
+<var>${badge}</var>
+<arg>${LOCATOR_CART_BADGE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:31.323525" elapsed="0.059690"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-08-22T09:17:31.397923" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${badge}</arg>
+<arg>${index + 1}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-08-22T09:17:31.396869" elapsed="0.001054"/>
+</kw>
+<var name="${index}">4</var>
+<status status="PASS" start="2025-08-22T09:17:30.192340" elapsed="1.221182"/>
+</iter>
+<iter>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-22T09:17:31.430858" level="INFO">Clicks the element '.inventory_item button &gt;&gt; nth=5'.</msg>
+<arg>${buttons}[${index}]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:31.426841" elapsed="1.071324"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-08-22T09:17:32.548150" level="INFO">Waited for Element with selector .shopping_cart_badge at state visible</msg>
+<arg>${LOCATOR_CART_BADGE}</arg>
+<arg>visible</arg>
+<arg>5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-08-22T09:17:32.509676" elapsed="0.038474"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-22T09:17:32.629708" level="INFO">Text: '6'</msg>
+<msg time="2025-08-22T09:17:32.630217" level="INFO">${badge} = 6</msg>
+<var>${badge}</var>
+<arg>${LOCATOR_CART_BADGE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:32.558327" elapsed="0.071890"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-08-22T09:17:32.648067" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${badge}</arg>
+<arg>${index + 1}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-08-22T09:17:32.634328" elapsed="0.013739"/>
+</kw>
+<var name="${index}">5</var>
+<status status="PASS" start="2025-08-22T09:17:31.414480" elapsed="1.249166"/>
+</iter>
+<var>${index}</var>
+<value>${count}</value>
+<status status="PASS" start="2025-08-22T09:17:25.253569" elapsed="7.415869"/>
+</for>
+<status status="PASS" start="2025-08-22T09:17:25.164512" elapsed="7.515748"/>
+</kw>
+<kw name="Go To Cart" owner="add_items">
+<kw name="Click" owner="Browser">
+<msg time="2025-08-22T09:17:32.708311" level="INFO">Clicks the element '#shopping_cart_container'.</msg>
+<arg>${LOCATOR_CART_CONTAINER}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:32.699297" elapsed="1.115421"/>
+</kw>
+<status status="PASS" start="2025-08-22T09:17:32.681377" elapsed="1.150357"/>
+</kw>
+<kw name="Get Elements" owner="Browser">
+<msg time="2025-08-22T09:17:33.900974" level="INFO">Found locator('.cart_item').first(),locator('.cart_item').nth(1),locator('.cart_item').nth(2),locator('.cart_item').nth(3),locator('.cart_item').nth(4),locator('.cart_item').nth(5) Locators successfully.</msg>
+<msg time="2025-08-22T09:17:33.912764" level="INFO">${items} = ['.cart_item &gt;&gt; nth=0', '.cart_item &gt;&gt; nth=1', '.cart_item &gt;&gt; nth=2', '.cart_item &gt;&gt; nth=3', '.cart_item &gt;&gt; nth=4', '.cart_item &gt;&gt; nth=5']</msg>
+<var>${items}</var>
+<arg>${LOCATOR_CART_ITEM}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:33.844444" elapsed="0.069323"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-08-22T09:17:33.931719" level="INFO">Length is 6.</msg>
+<msg time="2025-08-22T09:17:33.931719" level="INFO">${count} = 6</msg>
+<var>${count}</var>
+<arg>${items}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-08-22T09:17:33.918992" elapsed="0.012727"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-22T09:17:34.053828" level="INFO">Text: '$15.99'</msg>
+<msg time="2025-08-22T09:17:34.053828" level="INFO">${price_text} = $15.99</msg>
+<var>${price_text}</var>
+<arg>${LOCATOR_CART_ITEM} &gt;&gt; nth=${index} &gt;&gt; ${LOCATOR_CART_ITEM_PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:33.964908" elapsed="0.095445"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-08-22T09:17:34.081572" level="INFO">${price_text} = 15.99</msg>
+<var>${price_text}</var>
+<arg>${price_text}</arg>
+<arg>$</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.064899" elapsed="0.016673"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-08-22T09:17:34.108199" level="INFO">${price_text} = 15.99</msg>
+<var>${price_text}</var>
+<arg>${price_text}</arg>
+<arg>"</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.094392" elapsed="0.013807"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-08-22T09:17:34.134168" level="INFO">${price} = 15.99</msg>
+<var>${price}</var>
+<arg>${price_text}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.115011" elapsed="0.020205"/>
+</kw>
+<if>
+<branch type="IF" condition="${price} &lt; 20">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Item price ${price} &lt; 20 -&gt; keeping in cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.149060" elapsed="0.020594"/>
+</kw>
+<status status="PASS" start="2025-08-22T09:17:34.135216" elapsed="0.034438"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Element" owner="Browser">
+<var>${remove_btn}</var>
+<arg>${LOCATOR_CART_ITEM} &gt;&gt; nth=${index} &gt;&gt; ${LOCATOR_CART_REMOVE_BTN}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:34.197687" elapsed="0.015452"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${remove_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:34.222359" elapsed="0.009966"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Item price ${price} &gt; 20 -&gt; removed from cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:34.232325" elapsed="0.016199"/>
+</kw>
+<status status="NOT RUN" start="2025-08-22T09:17:34.189621" elapsed="0.076168"/>
+</branch>
+<status status="PASS" start="2025-08-22T09:17:34.135216" elapsed="0.130573"/>
+</if>
+<var name="${index}">5</var>
+<status status="PASS" start="2025-08-22T09:17:33.959277" elapsed="0.306512"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-22T09:17:34.375986" level="INFO">Text: '$7.99'</msg>
+<msg time="2025-08-22T09:17:34.375986" level="INFO">${price_text} = $7.99</msg>
+<var>${price_text}</var>
+<arg>${LOCATOR_CART_ITEM} &gt;&gt; nth=${index} &gt;&gt; ${LOCATOR_CART_ITEM_PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.283856" elapsed="0.092130"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-08-22T09:17:34.398676" level="INFO">${price_text} = 7.99</msg>
+<var>${price_text}</var>
+<arg>${price_text}</arg>
+<arg>$</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.384358" elapsed="0.014318"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-08-22T09:17:34.418777" level="INFO">${price_text} = 7.99</msg>
+<var>${price_text}</var>
+<arg>${price_text}</arg>
+<arg>"</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.398676" elapsed="0.020101"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-08-22T09:17:34.434517" level="INFO">${price} = 7.99</msg>
+<var>${price}</var>
+<arg>${price_text}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.434517" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${price} &lt; 20">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Item price ${price} &lt; 20 -&gt; keeping in cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.469412" elapsed="0.009918"/>
+</kw>
+<status status="PASS" start="2025-08-22T09:17:34.448447" elapsed="0.034317"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Element" owner="Browser">
+<var>${remove_btn}</var>
+<arg>${LOCATOR_CART_ITEM} &gt;&gt; nth=${index} &gt;&gt; ${LOCATOR_CART_REMOVE_BTN}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:34.510178" elapsed="0.008145"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${remove_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:34.530628" elapsed="0.001198"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Item price ${price} &gt; 20 -&gt; removed from cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:34.550567" elapsed="0.007558"/>
+</kw>
+<status status="NOT RUN" start="2025-08-22T09:17:34.495692" elapsed="0.068954"/>
+</branch>
+<status status="PASS" start="2025-08-22T09:17:34.448447" elapsed="0.127725"/>
+</if>
+<var name="${index}">4</var>
+<status status="PASS" start="2025-08-22T09:17:34.283856" elapsed="0.292316"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-22T09:17:34.685845" level="INFO">Text: '$49.99'</msg>
+<msg time="2025-08-22T09:17:34.701361" level="INFO">${price_text} = $49.99</msg>
+<var>${price_text}</var>
+<arg>${LOCATOR_CART_ITEM} &gt;&gt; nth=${index} &gt;&gt; ${LOCATOR_CART_ITEM_PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.606058" elapsed="0.095303"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-08-22T09:17:34.718450" level="INFO">${price_text} = 49.99</msg>
+<var>${price_text}</var>
+<arg>${price_text}</arg>
+<arg>$</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.701361" elapsed="0.017089"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-08-22T09:17:34.750465" level="INFO">${price_text} = 49.99</msg>
+<var>${price_text}</var>
+<arg>${price_text}</arg>
+<arg>"</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.734321" elapsed="0.016144"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-08-22T09:17:34.790505" level="INFO">${price} = 49.99</msg>
+<var>${price}</var>
+<arg>${price_text}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.764978" elapsed="0.025527"/>
+</kw>
+<if>
+<branch type="IF" condition="${price} &lt; 20">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Item price ${price} &lt; 20 -&gt; keeping in cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:34.813446" elapsed="0.010158"/>
+</kw>
+<status status="NOT RUN" start="2025-08-22T09:17:34.803833" elapsed="0.026823"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Element" owner="Browser">
+<msg time="2025-08-22T09:17:34.874848" level="INFO">Locator found successfully.</msg>
+<msg time="2025-08-22T09:17:34.874848" level="INFO">${remove_btn} = .cart_item &gt;&gt; nth=3 &gt;&gt; button[data-test*='remove']</msg>
+<var>${remove_btn}</var>
+<arg>${LOCATOR_CART_ITEM} &gt;&gt; nth=${index} &gt;&gt; ${LOCATOR_CART_REMOVE_BTN}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-08-22T09:17:34.844998" elapsed="0.029850"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-22T09:17:34.894971" level="INFO">Clicks the element '.cart_item &gt;&gt; nth=3 &gt;&gt; button[data-test*='remove']'.</msg>
+<arg>${remove_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:34.874848" elapsed="1.098293"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Item price ${price} &gt; 20 -&gt; removed from cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T09:17:35.973141" elapsed="0.018046"/>
+</kw>
+<status status="PASS" start="2025-08-22T09:17:34.837665" elapsed="1.153522"/>
+</branch>
+<status status="PASS" start="2025-08-22T09:17:34.803833" elapsed="1.187354"/>
+</if>
+<var name="${index}">3</var>
+<status status="PASS" start="2025-08-22T09:17:34.591536" elapsed="1.413161"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-22T09:17:36.076124" level="INFO">Text: '$15.99'</msg>
+<msg time="2025-08-22T09:17:36.076124" level="INFO">${price_text} = $15.99</msg>
+<var>${price_text}</var>
+<arg>${LOCATOR_CART_ITEM} &gt;&gt; nth=${index} &gt;&gt; ${LOCATOR_CART_ITEM_PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.017761" elapsed="0.058363"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-08-22T09:17:36.091752" level="INFO">${price_text} = 15.99</msg>
+<var>${price_text}</var>
+<arg>${price_text}</arg>
+<arg>$</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.076124" elapsed="0.015628"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-08-22T09:17:36.109111" level="INFO">${price_text} = 15.99</msg>
+<var>${price_text}</var>
+<arg>${price_text}</arg>
+<arg>"</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.091752" elapsed="0.017359"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-08-22T09:17:36.116795" level="INFO">${price} = 15.99</msg>
+<var>${price}</var>
+<arg>${price_text}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.116795" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${price} &lt; 20">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Item price ${price} &lt; 20 -&gt; keeping in cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.132148" elapsed="0.015372"/>
+</kw>
+<status status="PASS" start="2025-08-22T09:17:36.130692" elapsed="0.024399"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Element" owner="Browser">
+<var>${remove_btn}</var>
+<arg>${LOCATOR_CART_ITEM} &gt;&gt; nth=${index} &gt;&gt; ${LOCATOR_CART_REMOVE_BTN}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:36.169115" elapsed="0.001049"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${remove_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:36.180777" elapsed="0.006464"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Item price ${price} &gt; 20 -&gt; removed from cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:36.193083" elapsed="0.006571"/>
+</kw>
+<status status="NOT RUN" start="2025-08-22T09:17:36.160141" elapsed="0.039513"/>
+</branch>
+<status status="PASS" start="2025-08-22T09:17:36.130692" elapsed="0.085844"/>
+</if>
+<var name="${index}">2</var>
+<status status="PASS" start="2025-08-22T09:17:36.006233" elapsed="0.210822"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-22T09:17:36.280566" level="INFO">Text: '$9.99'</msg>
+<msg time="2025-08-22T09:17:36.280566" level="INFO">${price_text} = $9.99</msg>
+<var>${price_text}</var>
+<arg>${LOCATOR_CART_ITEM} &gt;&gt; nth=${index} &gt;&gt; ${LOCATOR_CART_ITEM_PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.217055" elapsed="0.063511"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-08-22T09:17:36.293580" level="INFO">${price_text} = 9.99</msg>
+<var>${price_text}</var>
+<arg>${price_text}</arg>
+<arg>$</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.280566" elapsed="0.013014"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-08-22T09:17:36.310952" level="INFO">${price_text} = 9.99</msg>
+<var>${price_text}</var>
+<arg>${price_text}</arg>
+<arg>"</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.309215" elapsed="0.001737"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-08-22T09:17:36.372465" level="INFO">${price} = 9.99</msg>
+<var>${price}</var>
+<arg>${price_text}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.372465" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${price} &lt; 20">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Item price ${price} &lt; 20 -&gt; keeping in cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.388108" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-22T09:17:36.372465" elapsed="0.032840"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Element" owner="Browser">
+<var>${remove_btn}</var>
+<arg>${LOCATOR_CART_ITEM} &gt;&gt; nth=${index} &gt;&gt; ${LOCATOR_CART_REMOVE_BTN}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:36.417619" elapsed="0.000000"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${remove_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:36.429395" elapsed="0.007263"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Item price ${price} &gt; 20 -&gt; removed from cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:36.444752" elapsed="0.007074"/>
+</kw>
+<status status="NOT RUN" start="2025-08-22T09:17:36.405305" elapsed="0.046521"/>
+</branch>
+<status status="PASS" start="2025-08-22T09:17:36.372465" elapsed="0.087871"/>
+</if>
+<var name="${index}">1</var>
+<status status="PASS" start="2025-08-22T09:17:36.217055" elapsed="0.243281"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-08-22T09:17:36.524487" level="INFO">Text: '$29.99'</msg>
+<msg time="2025-08-22T09:17:36.524487" level="INFO">${price_text} = $29.99</msg>
+<var>${price_text}</var>
+<arg>${LOCATOR_CART_ITEM} &gt;&gt; nth=${index} &gt;&gt; ${LOCATOR_CART_ITEM_PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.476117" elapsed="0.048370"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-08-22T09:17:36.539006" level="INFO">${price_text} = 29.99</msg>
+<var>${price_text}</var>
+<arg>${price_text}</arg>
+<arg>$</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.524487" elapsed="0.014519"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-08-22T09:17:36.554638" level="INFO">${price_text} = 29.99</msg>
+<var>${price_text}</var>
+<arg>${price_text}</arg>
+<arg>"</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.539006" elapsed="0.015632"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-08-22T09:17:36.570673" level="INFO">${price} = 29.99</msg>
+<var>${price}</var>
+<arg>${price_text}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.566653" elapsed="0.004020"/>
+</kw>
+<if>
+<branch type="IF" condition="${price} &lt; 20">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Item price ${price} &lt; 20 -&gt; keeping in cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-08-22T09:17:36.586303" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-22T09:17:36.570673" elapsed="0.029511"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Element" owner="Browser">
+<msg time="2025-08-22T09:17:36.629130" level="INFO">Locator found successfully.</msg>
+<msg time="2025-08-22T09:17:36.629130" level="INFO">${remove_btn} = .cart_item &gt;&gt; nth=0 &gt;&gt; button[data-test*='remove']</msg>
+<var>${remove_btn}</var>
+<arg>${LOCATOR_CART_ITEM} &gt;&gt; nth=${index} &gt;&gt; ${LOCATOR_CART_REMOVE_BTN}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-08-22T09:17:36.614617" elapsed="0.014513"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-08-22T09:17:36.644757" level="INFO">Clicks the element '.cart_item &gt;&gt; nth=0 &gt;&gt; button[data-test*='remove']'.</msg>
+<arg>${remove_btn}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:36.644757" elapsed="1.088232"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Item price ${price} &gt; 20 -&gt; removed from cart</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T09:17:37.732989" elapsed="0.014634"/>
+</kw>
+<status status="PASS" start="2025-08-22T09:17:36.600184" elapsed="1.153914"/>
+</branch>
+<status status="PASS" start="2025-08-22T09:17:36.570673" elapsed="1.183425"/>
+</if>
+<var name="${index}">0</var>
+<status status="PASS" start="2025-08-22T09:17:36.468109" elapsed="1.296101"/>
+</iter>
+<var>${index}</var>
+<value>${count}-1</value>
+<value>-1</value>
+<value>-1</value>
+<status status="PASS" start="2025-08-22T09:17:33.948258" elapsed="3.824450"/>
+</for>
+<status status="PASS" start="2025-08-22T09:17:21.706648" elapsed="16.067629"/>
+</kw>
+<kw name="Check All Items In Cart" owner="add_items">
+<kw name="Get Elements" owner="Browser">
+<msg time="2025-08-22T09:17:47.837804" level="INFO">Found  Locators successfully.</msg>
+<msg time="2025-08-22T09:17:47.837804" level="INFO">${items} = []</msg>
+<var>${items}</var>
+<arg>${LOCATOR_ITEM_LIST}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="PASS" start="2025-08-22T09:17:37.793193" elapsed="10.044611"/>
+</kw>
+<status status="PASS" start="2025-08-22T09:17:37.786937" elapsed="10.050867"/>
+</kw>
+<status status="PASS" start="2025-08-22T09:17:21.692379" elapsed="26.159433"/>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2025-08-22T09:17:48.662369" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-22T09:17:47.890872" elapsed="0.772103"/>
+</kw>
+<status status="PASS" start="2025-08-22T09:17:13.354403" elapsed="35.309488"/>
+</suite>
+<status status="PASS" start="2025-08-22T09:17:13.341081" elapsed="35.336157"/>
+</suite>
+<status status="PASS" start="2025-08-22T09:17:13.283612" elapsed="35.397956"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RF project" id="s1" pass="1" fail="0" skip="0">RF project</stat>
+<stat name="Robot" id="s1-s1" pass="1" fail="0" skip="0">RF project.Robot</stat>
+<stat name="Test Cart" id="s1-s1-s1" pass="1" fail="0" skip="0">RF project.Robot.Test Cart</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

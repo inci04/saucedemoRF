@@ -1,0 +1,8 @@
+CONSTANTS_PRODUCTS_PAGE_URL = "https://www.saucedemo.com/inventory.html"
+CONSTANTS_PRODUCTS_PAGE_TITLE = "Products"
+CONSTANT_ITEM1 = "Sauce Labs Backpack"
+CONSTANT_ITEM2 = "Sauce Labs Bike Light"
+CONSTANT_ITEM3 = "Sauce Labs Bolt T-Shirt"
+CONSTANT_ITEM4 = "Sauce Labs Fleece Jacket" 
+CONSTANT_ITEM5 = "Sauce Labs Onesie"
+CONSTANT_ITEM6 = "Test.allTheThings() T-Shirt (Red)"
