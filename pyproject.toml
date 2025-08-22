@@ -1,0 +1,19 @@
+[project]
+name = "rf-project"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Inci",email = "nuraliyevainci@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "robotframework (>=7.3.2,<8.0.0)",
+    "robotframework-browser (>=19.7.0,<20.0.0)",
+    "robotframework-requests (>=0.9.7,<0.10.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
