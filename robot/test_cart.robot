@@ -8,3 +8,4 @@ Suite Teardown    Close Browser
 Modify Cart Based On Price
     Handle Cart Items By Price
     Check All Items In Cart
+ 
