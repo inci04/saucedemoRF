@@ -41,8 +41,8 @@ Handle Cart Items By Price
         IF    ${price} < 20
             Log To Console    Item price ${price} < 20 -> keeping in cart
         ELSE
-            ${remove_btn}=    Get Element    ${LOCATOR_CART_ITEM}   ${LOCATOR_CART_REMOVE_BTN}
-            Click    ${remove_btn}
+            Click     ${LOCATOR_CART_REMOVE_BTN}   
+            # Get Webelement    .//button[starts-with(@data-test, 'remove-')]    parent=${item}
             Log To Console    Item price ${price} > 20 -> removed from cart
         END
     END

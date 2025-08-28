@@ -17,7 +17,7 @@ Add All Items To Cart
     END
 
 Go To Cart
-    Click    ${LOCATOR_CART_CONTAINER}
+    Click    ${LOCATOR_CART_CONTAINER}     
 
 Check All Items In Cart
     ${items}=    Get Elements    ${LOCATOR_ITEM_LIST}
