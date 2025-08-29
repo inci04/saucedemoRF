@@ -1,511 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.11.0 on win32)" generated="2025-08-28T15:49:10.391831" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.11.0 on win32)" generated="2025-08-29T10:48:26.928063" rpa="false" schemaversion="5">
 <suite id="s1" name="RF project" source="D:\RF_project">
 <suite id="s1-s1" name="Robot" source="D:\RF_project\robot">
-<suite id="s1-s1-s1" name="Test Cart" source="D:\RF_project\robot\test_cart.robot">
-<kw name="Open SauceDemo On Browser" owner="login" type="SETUP">
-<kw name="New Browser" owner="Browser">
-<msg time="2025-08-28T15:49:10.613102" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 1000.0, "timeout": 30000.0, "tracesDir": "D:\\RF_project\\results\\browser\\traces\\temp\\1341e820-a7ff-4460-977f-c618d4de75ba"}</msg>
-<msg time="2025-08-28T15:49:10.633972" level="INFO">Starting Browser process D:\RF_project\venv\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:61205</msg>
-<msg time="2025-08-28T15:49:11.907164" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":1000,"timeout":30000,"tracesDir":"D:\\RF_project\\results\\browser\\traces\\temp\\1341e820-a7ff-4460-977f-c618d4de75ba"}</msg>
-<arg>browser=chromium</arg>
-<arg>headless=False</arg>
-<arg>slowMo=1s</arg>
-<arg>timeout=30s</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2025-08-28T15:49:10.612593" elapsed="1.294571"/>
+<suite id="s1-s1-s1" name="Api Test" source="D:\RF_project\robot\api_test.robot">
+<kw name="Create Session" owner="RequestsLibrary" type="SETUP">
+<msg time="2025-08-29T10:48:27.058634" level="INFO">Creating Session using : alias=API_SESSION, url=https://automationexercise.com/api, headers={'Content-Type': 'application/json', 'Accept': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>alias=${SESSION_ALIAS}</arg>
+<arg>url=${BASE_URL}</arg>
+<arg>verify=True</arg>
+<arg>headers={"Content-Type": "application/json", "Accept": "application/json"}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-08-29T10:48:27.057620" elapsed="0.001014"/>
 </kw>
-<kw name="New Context" owner="Browser">
-<msg time="2025-08-28T15:49:11.913038" level="INFO">{
-  "acceptDownloads": true,
-  "bypassCSP": false,
-  "defaultBrowserType": "chromium",
-  "forcedColors": "none",
-  "ignoreHTTPSErrors": false,
-  "javaScriptEnabled": true,
-  "offline": false,
-  "reducedMotion": "no-preference",
-  "serviceWorkers": "allow",
-  "tracing": true,
-  "viewport": {
-    "height": 720,
-    "width": 1280
-  }
-}</msg>
-<msg time="2025-08-28T15:49:11.971456" level="INFO">Successfully created context and trace file will be saved to: D:\RF_project\results\browser\traces\trace_context=d3af7fd7-e348-4a84-889b-ffaebad0f2b6.zip</msg>
-<msg time="2025-08-28T15:49:11.972942" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'defaultBrowserType': 'chromium', 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'tracing': True, 'viewport': {'height': 720, 'width': 1280}, 'trace': {'screenshots': True, 'snapshots': True}}</msg>
-<arg>tracing=True</arg>
-<arg>viewport={"width": 1280, "height": 720}</arg>
-<arg>defaultBrowserType=chromium</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Create a new BrowserContext with specified options.</doc>
-<status status="PASS" start="2025-08-28T15:49:11.908375" elapsed="0.065072"/>
+<test id="s1-s1-s1-t1" name="Update User Account" line="100">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-29T10:48:27.062160" level="INFO">${data} = {'name': 'Inji Nuraliyeva', 'email': 'inji123@gmail.com', 'password': 'inji00', 'title': 'Mrs', 'birth_date': '12', 'birth_month': 'April', 'birth_year': '2004', 'firstname': 'Inji', 'lastname': 'Nura...</msg>
+<var>${data}</var>
+<arg>name=Inji Nuraliyeva</arg>
+<arg>email=${TEST_EMAIL}</arg>
+<arg>password=${TEST_PASSWORD}</arg>
+<arg>title=Mrs</arg>
+<arg>birth_date=12</arg>
+<arg>birth_month=April</arg>
+<arg>birth_year=2004</arg>
+<arg>firstname=Inji</arg>
+<arg>lastname=Nuraliyeva</arg>
+<arg>company=Andersen</arg>
+<arg>country=Azerbaijan</arg>
+<arg>zipcode=12345</arg>
+<arg>city=Baku</arg>
+<arg>mobile_number=987654321</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-29T10:48:27.061656" elapsed="0.000504"/>
 </kw>
-<kw name="New Page" owner="Browser">
-<msg time="2025-08-28T15:49:14.295090" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com/</msg>
-<arg>${CONSTANTS_START_URL}</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Open a new Page.</doc>
-<status status="PASS" start="2025-08-28T15:49:11.981692" elapsed="2.313398"/>
-</kw>
-<status status="PASS" start="2025-08-28T15:49:10.611552" elapsed="3.687574"/>
-</kw>
-<test id="s1-s1-s1-t1" name="Modify Cart Based On Price" line="8">
-<kw name="Handle Cart Items By Price" owner="cart">
-<kw name="Log In" owner="login">
-<kw name="Fill Text" owner="Browser">
-<msg time="2025-08-28T15:49:14.318674" level="INFO">Fills the text 'standard_user' in the given field.</msg>
-<arg>${LOCATORS_AUTH_USERNAME}</arg>
-<arg>${CONSTANTS_USERNAME}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:14.315883" elapsed="1.052317"/>
-</kw>
-<kw name="Fill Text" owner="Browser">
-<msg time="2025-08-28T15:49:15.374347" level="INFO">Fills the text 'secret_sauce' in the given field.</msg>
-<arg>${LOCATORS_AUTH_PASSWORD}</arg>
-<arg>${CONSTANTS_PASSWORD}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:15.369921" elapsed="1.032357"/>
-</kw>
-<kw name="Click" owner="Browser">
-<msg time="2025-08-28T15:49:16.407371" level="INFO">Clicks the element 'input[data-test='login-button']'.</msg>
-<arg>${LOCATORS_AUTH_LOGIN_BUTTON}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:16.404273" elapsed="1.098210"/>
-</kw>
-<status status="PASS" start="2025-08-28T15:49:14.313879" elapsed="3.190599"/>
-</kw>
-<kw name="Add All Items To Cart" owner="add_items">
-<kw name="Get Elements" owner="Browser">
-<msg time="2025-08-28T15:49:17.531802" level="INFO">Found locator('.inventory_item button').first(),locator('.inventory_item button').nth(1),locator('.inventory_item button').nth(2),locator('.inventory_item button').nth(3),locator('.inventory_item button').nth(4),locator('.inventory_item button').nth(5) Locators successfully.</msg>
-<msg time="2025-08-28T15:49:17.532797" level="INFO">${buttons} = ['.inventory_item button &gt;&gt; nth=0', '.inventory_item button &gt;&gt; nth=1', '.inventory_item button &gt;&gt; nth=2', '.inventory_item button &gt;&gt; nth=3', '.inventory_item button &gt;&gt; nth=4', '.inventory_item button ...</msg>
-<var>${buttons}</var>
-<arg>${LOCATOR_ADD_TO_CART_BTN}</arg>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
-for all matched elements by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:17.509067" elapsed="0.023730"/>
-</kw>
-<kw name="Get Length" owner="BuiltIn">
-<msg time="2025-08-28T15:49:17.537617" level="INFO">Length is 6.</msg>
-<msg time="2025-08-28T15:49:17.538610" level="INFO">${count} = 6</msg>
-<var>${count}</var>
-<arg>${buttons}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-08-28T15:49:17.535605" elapsed="0.003005"/>
-</kw>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Click" owner="Browser">
-<msg time="2025-08-28T15:49:17.550947" level="INFO">Clicks the element '.inventory_item button &gt;&gt; nth=0'.</msg>
-<arg>${buttons}[${index}]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:17.547646" elapsed="1.041786"/>
-</kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-08-28T15:49:18.606010" level="INFO">Waited for Element with selector .shopping_cart_badge at state visible</msg>
-<arg>${LOCATOR_CART_BADGE}</arg>
-<arg>visible</arg>
-<arg>5s</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-08-28T15:49:18.591986" elapsed="0.014024"/>
-</kw>
-<kw name="Get Text" owner="Browser">
-<msg time="2025-08-28T15:49:18.645369" level="INFO">Text: '1'</msg>
-<msg time="2025-08-28T15:49:18.646372" level="INFO">${badge} = 1</msg>
-<var>${badge}</var>
-<arg>${LOCATOR_CART_BADGE}</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:18.609004" elapsed="0.037368"/>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-08-29T10:48:27.963785" level="INFO">PUT Request : url=https://automationexercise.com/api/updateAccount 
+ path_url=/api/updateAccount 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '322'} 
+ body=b'{"name": "Inji Nuraliyeva", "email": "inji123@gmail.com", "password": "inji00", "title": "Mrs", "birth_date": "12", "birth_month": "April", "birth_year": "2004", "firstname": "Inji", "lastname": "Nuraliyeva", "company": "Andersen", "country": "Azerbaijan", "zipcode": "12345", "city": "Baku", "mobile_number": "987654321"}' 
+ </msg>
+<msg time="2025-08-29T10:48:27.963785" level="INFO">PUT Response : url=https://automationexercise.com/api/updateAccount 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 29 Aug 2025 06:48:27 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'PUT, OPTIONS', 'x-powered-by': 'Phusion Passenger(R) 6.0.23', 'status': '200 OK', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=VXEvzl1b4P65KCNb0OUhlJoxBy4CiUHUWj2bOZO%2B5QLi8VieAeYCceWYiF1b484%2Fb2VRNwlpXAusuRZZ1j8eWWwz1X17dpe68TyW86kyGr7IMddMc6A%3D"}]}', 'Server': 'cloudflare', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Content-Encoding': 'zstd', 'CF-RAY': '976a1a511d3e9dcc-LLK', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"responseCode": 400, "message": "Bad request, email parameter is missing in PUT request."} 
+ </msg>
+<msg time="2025-08-29T10:48:27.963785" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${SESSION_ALIAS}</arg>
+<arg>/updateAccount</arg>
+<arg>json=${data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-08-29T10:48:27.062664" elapsed="0.901121"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-08-28T15:49:18.652873" level="INFO">Argument types are:
-&lt;class 'str'&gt;
-&lt;class 'int'&gt;</msg>
-<arg>${badge}</arg>
-<arg>${index + 1}</arg>
+<msg time="2025-08-29T10:48:27.963785" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-08-28T15:49:18.648314" elapsed="0.004559"/>
+<status status="PASS" start="2025-08-29T10:48:27.963785" elapsed="0.003824"/>
 </kw>
-<var name="${index}">0</var>
-<status status="PASS" start="2025-08-28T15:49:17.544955" elapsed="1.110004"/>
-</iter>
-<iter>
-<kw name="Click" owner="Browser">
-<msg time="2025-08-28T15:49:18.666185" level="INFO">Clicks the element '.inventory_item button &gt;&gt; nth=1'.</msg>
-<arg>${buttons}[${index}]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:18.660809" elapsed="1.047615"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-29T10:48:27.969697" level="INFO">{'responseCode': 400, 'message': 'Bad request, email parameter is missing in PUT request.'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-29T10:48:27.968118" elapsed="0.001579"/>
 </kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-08-28T15:49:19.725484" level="INFO">Waited for Element with selector .shopping_cart_badge at state visible</msg>
-<arg>${LOCATOR_CART_BADGE}</arg>
-<arg>visible</arg>
-<arg>5s</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-08-28T15:49:19.713336" elapsed="0.013148"/>
-</kw>
-<kw name="Get Text" owner="Browser">
-<msg time="2025-08-28T15:49:19.756569" level="INFO">Text: '2'</msg>
-<msg time="2025-08-28T15:49:19.756569" level="INFO">${badge} = 2</msg>
-<var>${badge}</var>
-<arg>${LOCATOR_CART_BADGE}</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:19.732633" elapsed="0.023936"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-08-28T15:49:19.765745" level="INFO">Argument types are:
-&lt;class 'str'&gt;
-&lt;class 'int'&gt;</msg>
-<arg>${badge}</arg>
-<arg>${index + 1}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-08-28T15:49:19.759778" elapsed="0.005967"/>
-</kw>
-<var name="${index}">1</var>
-<status status="PASS" start="2025-08-28T15:49:18.657309" elapsed="1.110984"/>
-</iter>
-<iter>
-<kw name="Click" owner="Browser">
-<msg time="2025-08-28T15:49:19.776743" level="INFO">Clicks the element '.inventory_item button &gt;&gt; nth=2'.</msg>
-<arg>${buttons}[${index}]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:19.774468" elapsed="1.035036"/>
-</kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-08-28T15:49:20.826588" level="INFO">Waited for Element with selector .shopping_cart_badge at state visible</msg>
-<arg>${LOCATOR_CART_BADGE}</arg>
-<arg>visible</arg>
-<arg>5s</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-08-28T15:49:20.814567" elapsed="0.012021"/>
-</kw>
-<kw name="Get Text" owner="Browser">
-<msg time="2025-08-28T15:49:20.855707" level="INFO">Text: '3'</msg>
-<msg time="2025-08-28T15:49:20.855707" level="INFO">${badge} = 3</msg>
-<var>${badge}</var>
-<arg>${LOCATOR_CART_BADGE}</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:20.833667" elapsed="0.023041"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-08-28T15:49:20.865311" level="INFO">Argument types are:
-&lt;class 'str'&gt;
-&lt;class 'int'&gt;</msg>
-<arg>${badge}</arg>
-<arg>${index + 1}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-08-28T15:49:20.859051" elapsed="0.006260"/>
-</kw>
-<var name="${index}">2</var>
-<status status="PASS" start="2025-08-28T15:49:19.770882" elapsed="1.096356"/>
-</iter>
-<iter>
-<kw name="Click" owner="Browser">
-<msg time="2025-08-28T15:49:20.874949" level="INFO">Clicks the element '.inventory_item button &gt;&gt; nth=3'.</msg>
-<arg>${buttons}[${index}]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:20.871780" elapsed="1.040266"/>
-</kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-08-28T15:49:21.925317" level="INFO">Waited for Element with selector .shopping_cart_badge at state visible</msg>
-<arg>${LOCATOR_CART_BADGE}</arg>
-<arg>visible</arg>
-<arg>5s</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-08-28T15:49:21.915634" elapsed="0.010979"/>
-</kw>
-<kw name="Get Text" owner="Browser">
-<msg time="2025-08-28T15:49:21.951717" level="INFO">Text: '4'</msg>
-<msg time="2025-08-28T15:49:21.952714" level="INFO">${badge} = 4</msg>
-<var>${badge}</var>
-<arg>${LOCATOR_CART_BADGE}</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:21.931254" elapsed="0.021460"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-08-28T15:49:21.958314" level="INFO">Argument types are:
-&lt;class 'str'&gt;
-&lt;class 'int'&gt;</msg>
-<arg>${badge}</arg>
-<arg>${index + 1}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-08-28T15:49:21.955501" elapsed="0.002813"/>
-</kw>
-<var name="${index}">3</var>
-<status status="PASS" start="2025-08-28T15:49:20.869744" elapsed="1.091100"/>
-</iter>
-<iter>
-<kw name="Click" owner="Browser">
-<msg time="2025-08-28T15:49:21.971627" level="INFO">Clicks the element '.inventory_item button &gt;&gt; nth=4'.</msg>
-<arg>${buttons}[${index}]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:21.968628" elapsed="1.040358"/>
-</kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-08-28T15:49:23.022921" level="INFO">Waited for Element with selector .shopping_cart_badge at state visible</msg>
-<arg>${LOCATOR_CART_BADGE}</arg>
-<arg>visible</arg>
-<arg>5s</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-08-28T15:49:23.013595" elapsed="0.009326"/>
-</kw>
-<kw name="Get Text" owner="Browser">
-<msg time="2025-08-28T15:49:23.048961" level="INFO">Text: '5'</msg>
-<msg time="2025-08-28T15:49:23.049966" level="INFO">${badge} = 5</msg>
-<var>${badge}</var>
-<arg>${LOCATOR_CART_BADGE}</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:23.025813" elapsed="0.024153"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-08-28T15:49:23.055953" level="INFO">Argument types are:
-&lt;class 'str'&gt;
-&lt;class 'int'&gt;</msg>
-<arg>${badge}</arg>
-<arg>${index + 1}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-08-28T15:49:23.051964" elapsed="0.003989"/>
-</kw>
-<var name="${index}">4</var>
-<status status="PASS" start="2025-08-28T15:49:21.965566" elapsed="1.092390"/>
-</iter>
-<iter>
-<kw name="Click" owner="Browser">
-<msg time="2025-08-28T15:49:23.070743" level="INFO">Clicks the element '.inventory_item button &gt;&gt; nth=5'.</msg>
-<arg>${buttons}[${index}]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:23.066957" elapsed="1.043670"/>
-</kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-08-28T15:49:24.125438" level="INFO">Waited for Element with selector .shopping_cart_badge at state visible</msg>
-<arg>${LOCATOR_CART_BADGE}</arg>
-<arg>visible</arg>
-<arg>5s</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-08-28T15:49:24.114707" elapsed="0.010731"/>
-</kw>
-<kw name="Get Text" owner="Browser">
-<msg time="2025-08-28T15:49:24.153143" level="INFO">Text: '6'</msg>
-<msg time="2025-08-28T15:49:24.153143" level="INFO">${badge} = 6</msg>
-<var>${badge}</var>
-<arg>${LOCATOR_CART_BADGE}</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:24.132223" elapsed="0.020920"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-08-28T15:49:24.159761" level="INFO">Argument types are:
-&lt;class 'str'&gt;
-&lt;class 'int'&gt;</msg>
-<arg>${badge}</arg>
-<arg>${index + 1}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-08-28T15:49:24.156768" elapsed="0.002993"/>
-</kw>
-<var name="${index}">5</var>
-<status status="PASS" start="2025-08-28T15:49:23.061444" elapsed="1.103696"/>
-</iter>
-<var>${index}</var>
-<value>${count}</value>
-<status status="PASS" start="2025-08-28T15:49:17.541801" elapsed="6.625951"/>
-</for>
-<status status="PASS" start="2025-08-28T15:49:17.506072" elapsed="6.663452"/>
-</kw>
-<kw name="Go To Cart" owner="add_items">
-<kw name="Click" owner="Browser">
-<msg time="2025-08-28T15:49:24.179830" level="INFO">Clicks the element '#shopping_cart_container'.</msg>
-<arg>${LOCATOR_CART_CONTAINER}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:24.175537" elapsed="1.046354"/>
-</kw>
-<status status="PASS" start="2025-08-28T15:49:24.172068" elapsed="1.052814"/>
-</kw>
-<kw name="Get Elements" owner="Browser">
-<msg time="2025-08-28T15:49:25.246899" level="INFO">Found locator('//*[@data-test="inventory-item-price"]').first(),locator('//*[@data-test="inventory-item-price"]').nth(1),locator('//*[@data-test="inventory-item-price"]').nth(2),locator('//*[@data-test="inventory-item-price"]').nth(3),locator('//*[@data-test="inventory-item-price"]').nth(4),locator('//*[@data-test="inventory-item-price"]').nth(5) Locators successfully.</msg>
-<msg time="2025-08-28T15:49:25.248291" level="INFO">${items} = ['//*[@data-test="inventory-item-price"] &gt;&gt; nth=0', '//*[@data-test="inventory-item-price"] &gt;&gt; nth=1', '//*[@data-test="inventory-item-price"] &gt;&gt; nth=2', '//*[@data-test="inventory-item-price"] &gt;&gt; nth...</msg>
-<var>${items}</var>
-<arg>${LOCATOR_CART_ITEM_PRICE}</arg>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
-for all matched elements by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:25.227878" elapsed="0.020413"/>
-</kw>
-<for flavor="IN">
-<iter>
-<kw name="Get Text" owner="Browser">
-<msg time="2025-08-28T15:49:25.277993" level="INFO">Text: '$29.99'</msg>
-<msg time="2025-08-28T15:49:25.278997" level="INFO">${price_text} = $29.99</msg>
-<var>${price_text}</var>
-<arg>${item}</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-08-28T15:49:25.257265" elapsed="0.021732"/>
-</kw>
-<kw name="Remove String" owner="String">
-<msg time="2025-08-28T15:49:25.284687" level="INFO">${price_text} = 29.99</msg>
-<var>${price_text}</var>
-<arg>${price_text}</arg>
-<arg>$</arg>
-<arg>"</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="PASS" start="2025-08-28T15:49:25.281601" elapsed="0.003086"/>
-</kw>
-<kw name="Convert To Number" owner="BuiltIn">
-<msg time="2025-08-28T15:49:25.289331" level="INFO">${price} = 29.99</msg>
-<var>${price}</var>
-<arg>${price_text}</arg>
-<doc>Converts the given item to a floating point number.</doc>
-<status status="PASS" start="2025-08-28T15:49:25.287214" elapsed="0.002117"/>
-</kw>
-<if>
-<branch type="IF" condition="${price} &lt; 20">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Item price ${price} &lt; 20 -&gt; keeping in cart</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-08-28T15:49:25.298522" elapsed="0.002985"/>
-</kw>
-<status status="NOT RUN" start="2025-08-28T15:49:25.293041" elapsed="0.010548"/>
-</branch>
-<branch type="ELSE">
-<kw name="Click" owner="Browser">
-<msg time="2025-08-28T15:49:25.312564" level="INFO">Clicks the element './/button[starts-with(@data-test, "remove-")]'.</msg>
-<msg time="2025-08-28T15:49:26.449631" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
-<msg time="2025-08-28T15:49:26.449631" level="INFO">See also file:///D:/RF_project/results/playwright-log.txt for additional details.</msg>
-<msg time="2025-08-28T15:49:26.449631" level="FAIL">Error: locator.click: Unsupported token "@data-test" while parsing css selector ".//button[starts-with(@data-test, "remove-")]". Did you mean to CSS.escape it?
-Call log:
-  - waiting for .//button[starts-with(@data-test, "remove-")]
-</msg>
-<arg>${LOCATOR_CART_REMOVE_BTN}</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="FAIL" start="2025-08-28T15:49:25.308164" elapsed="1.148862">Error: locator.click: Unsupported token "@data-test" while parsing css selector ".//button[starts-with(@data-test, "remove-")]". Did you mean to CSS.escape it?
-Call log:
-  - waiting for .//button[starts-with(@data-test, "remove-")]
-</status>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Item price ${price} &gt; 20 -&gt; removed from cart</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-08-28T15:49:26.459556" elapsed="0.005734"/>
-</kw>
-<status status="FAIL" start="2025-08-28T15:49:25.305587" elapsed="1.162310">Error: locator.click: Unsupported token "@data-test" while parsing css selector ".//button[starts-with(@data-test, "remove-")]". Did you mean to CSS.escape it?
-Call log:
-  - waiting for .//button[starts-with(@data-test, "remove-")]
-</status>
-</branch>
-<status status="FAIL" start="2025-08-28T15:49:25.293041" elapsed="1.177045">Error: locator.click: Unsupported token "@data-test" while parsing css selector ".//button[starts-with(@data-test, "remove-")]". Did you mean to CSS.escape it?
-Call log:
-  - waiting for .//button[starts-with(@data-test, "remove-")]
-</status>
-</if>
-<var name="${item}">//*[@data-test="inventory-item-price"] &gt;&gt; nth=0</var>
-<status status="FAIL" start="2025-08-28T15:49:25.254026" elapsed="1.216060">Error: locator.click: Unsupported token "@data-test" while parsing css selector ".//button[starts-with(@data-test, "remove-")]". Did you mean to CSS.escape it?
-Call log:
-  - waiting for .//button[starts-with(@data-test, "remove-")]
-</status>
-</iter>
-<var>${item}</var>
-<value>@{items}</value>
-<status status="FAIL" start="2025-08-28T15:49:25.250957" elapsed="1.221548">Error: locator.click: Unsupported token "@data-test" while parsing css selector ".//button[starts-with(@data-test, "remove-")]". Did you mean to CSS.escape it?
-Call log:
-  - waiting for .//button[starts-with(@data-test, "remove-")]
-</status>
-</for>
-<status status="FAIL" start="2025-08-28T15:49:14.310571" elapsed="12.163928">Error: locator.click: Unsupported token "@data-test" while parsing css selector ".//button[starts-with(@data-test, "remove-")]". Did you mean to CSS.escape it?
-Call log:
-  - waiting for .//button[starts-with(@data-test, "remove-")]
-</status>
-</kw>
-<kw name="Check All Items In Cart" owner="add_items">
-<status status="NOT RUN" start="2025-08-28T15:49:26.476493" elapsed="0.005334"/>
-</kw>
-<status status="FAIL" start="2025-08-28T15:49:14.302672" elapsed="12.181946">Error: locator.click: Unsupported token "@data-test" while parsing css selector ".//button[starts-with(@data-test, "remove-")]". Did you mean to CSS.escape it?
-Call log:
-  - waiting for .//button[starts-with(@data-test, "remove-")]
-</status>
+<tag>api</tag>
+<tag>put</tag>
+<status status="PASS" start="2025-08-29T10:48:27.059634" elapsed="0.910580"/>
 </test>
-<kw name="Close Browser" owner="Browser" type="TEARDOWN">
-<msg time="2025-08-28T15:49:26.829424" level="INFO">Closed browser</msg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-08-28T15:49:26.507614" elapsed="0.322315"/>
+<kw name="Delete All Sessions" owner="RequestsLibrary" type="TEARDOWN">
+<msg time="2025-08-29T10:48:27.974947" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2025-08-29T10:48:27.974947" elapsed="0.000000"/>
 </kw>
-<status status="FAIL" start="2025-08-28T15:49:10.430849" elapsed="16.399080"/>
+<status status="PASS" start="2025-08-29T10:48:26.968114" elapsed="1.010108"/>
 </suite>
-<status status="FAIL" start="2025-08-28T15:49:10.424650" elapsed="16.412157"/>
+<status status="PASS" start="2025-08-29T10:48:26.965391" elapsed="1.015630"/>
 </suite>
-<status status="FAIL" start="2025-08-28T15:49:10.396818" elapsed="16.444226"/>
+<status status="PASS" start="2025-08-29T10:48:26.933835" elapsed="1.050090"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">api</stat>
+<stat pass="1" fail="0" skip="0">put</stat>
 </tag>
 <suite>
-<stat name="RF project" id="s1" pass="0" fail="1" skip="0">RF project</stat>
-<stat name="Robot" id="s1-s1" pass="0" fail="1" skip="0">RF project.Robot</stat>
-<stat name="Test Cart" id="s1-s1-s1" pass="0" fail="1" skip="0">RF project.Robot.Test Cart</stat>
+<stat name="RF project" id="s1" pass="1" fail="0" skip="0">RF project</stat>
+<stat name="Robot" id="s1-s1" pass="1" fail="0" skip="0">RF project.Robot</stat>
+<stat name="Api Test" id="s1-s1-s1" pass="1" fail="0" skip="0">RF project.Robot.Api Test</stat>
 </suite>
 </statistics>
 <errors>
